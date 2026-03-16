@@ -22,16 +22,15 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
-
     <!-- Hero / Intro -->
-    <section id="hero" class="pt-8 pb-6 border-b border-border">
+    <section id="hero" class="border-b border-border pt-8 pb-6">
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
         Hi, I'm Alex
       </h1>
       <a
         target="_blank"
         href="/rss.xml"
-        class="inline-block ml-2"
+        class="ml-2 inline-block"
         aria-label="rss feed"
         title="RSS Feed"
       >
@@ -49,17 +48,19 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           href="https://informatica.ucm.es/"
           target="_blank"
           class="underline decoration-dashed underline-offset-4 hover:text-accent"
-        >@UCM</a>{" "}
+          >@UCM</a
+        >{" "}
         and studying Geography and History{" "}
         <a
           href="https://www.uned.es/"
           target="_blank"
           class="underline decoration-dashed underline-offset-4 hover:text-accent"
-        >@UNED</a>.
+          >@UNED</a
+        >.
       </p>
       <p class="mt-2 text-base text-foreground/80">
-        Mainly interested in backend development, AI applications (computer vision &
-        deep neural networks), and autonomous drone flight.
+        Mainly interested in backend development, AI applications (computer
+        vision & deep neural networks), and autonomous drone flight.
       </p>
 
       {
@@ -73,53 +74,59 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     </section>
 
     <!-- Resume -->
-    <section id="resume" class="pt-10 pb-6 border-b border-border">
-      <h2 class="text-2xl font-semibold tracking-wide mb-6">Resume</h2>
+    <section id="resume" class="border-b border-border pt-10 pb-6">
+      <h2 class="mb-6 text-2xl font-semibold tracking-wide">Resume</h2>
 
       <!-- Work Experience -->
       <div class="mb-8">
-        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+        <h3
+          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+        >
           Work Experience
         </h3>
         <ul class="space-y-6">
           <li>
-            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
-              <span class="font-semibold text-base">GMV</span>
-              <span class="text-sm text-foreground/60">Apr 2022 – Jul 2025</span>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+              <span class="text-base font-semibold">GMV</span>
+              <span class="text-sm text-foreground/60">Apr 2022 – Jul 2025</span
+              >
             </div>
-            <p class="text-sm text-foreground/80 mt-1">
-              Full development cycle of EGNOS projects (MSI, EURONOTAM, AUGUR) — from
-              requirements definition with the client to deploying and sourcing hardware
-              for their CPD.
+            <p class="mt-1 text-sm text-foreground/80">
+              Full development cycle of EGNOS projects (MSI, EURONOTAM, AUGUR) —
+              from requirements definition with the client to deploying and
+              sourcing hardware for their CPD.
             </p>
-            <p class="text-sm text-foreground/60 mt-1">
+            <p class="mt-1 text-sm text-foreground/60">
               Java · C++ · Python · PostgreSQL · MySQL · Jenkins
             </p>
           </li>
           <li>
-            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
-              <span class="font-semibold text-base">Stratesys</span>
-              <span class="text-sm text-foreground/60">Dec 2021 – Apr 2022</span>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+              <span class="text-base font-semibold">Stratesys</span>
+              <span class="text-sm text-foreground/60">Dec 2021 – Apr 2022</span
+              >
             </div>
-            <p class="text-sm text-foreground/80 mt-1">
+            <p class="mt-1 text-sm text-foreground/80">
               Backend development in Java (Spring Boot).
             </p>
           </li>
           <li>
-            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
-              <span class="font-semibold text-base">Elix RegTech</span>
-              <span class="text-sm text-foreground/60">Feb 2021 – Jul 2021</span>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+              <span class="text-base font-semibold">Elix RegTech</span>
+              <span class="text-sm text-foreground/60">Feb 2021 – Jul 2021</span
+              >
             </div>
-            <p class="text-sm text-foreground/80 mt-1">
+            <p class="mt-1 text-sm text-foreground/80">
               Backend development in PHP (Laravel).
             </p>
           </li>
           <li>
-            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
-              <span class="font-semibold text-base">Asociación Life Three</span>
-              <span class="text-sm text-foreground/60">Oct 2017 – Apr 2019</span>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+              <span class="text-base font-semibold">Asociación Life Three</span>
+              <span class="text-sm text-foreground/60">Oct 2017 – Apr 2019</span
+              >
             </div>
-            <p class="text-sm text-foreground/80 mt-1">
+            <p class="mt-1 text-sm text-foreground/80">
               High school teacher for game development.
             </p>
           </li>
@@ -128,48 +135,56 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
       <!-- Education -->
       <div class="mb-8">
-        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+        <h3
+          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+        >
           Education
         </h3>
         <ul class="space-y-6">
           <li>
-            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
-              <span class="font-semibold text-base">Universidad Complutense de Madrid</span>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+              <span class="text-base font-semibold"
+                >Universidad Complutense de Madrid</span
+              >
               <span class="text-sm text-foreground/60">2016 – 2022</span>
             </div>
-            <p class="text-sm text-foreground/80 mt-1">
-              BSc Software Engineering (Computation itinerary, taught in English)
+            <p class="mt-1 text-sm text-foreground/80">
+              BSc Software Engineering (Computation itinerary, taught in
+              English)
             </p>
-            <p class="text-sm text-foreground/80 mt-1">
+            <p class="mt-1 text-sm text-foreground/80">
               Thesis:{" "}
               <a
                 href="https://eprints.ucm.es/id/eprint/74410/"
                 target="_blank"
                 class="underline decoration-dashed underline-offset-4 hover:text-accent"
               >
-                Simulation of Autonomous Flight of UAVs for Search and Rescue Missions
+                Simulation of Autonomous Flight of UAVs for Search and Rescue
+                Missions
               </a>
             </p>
-            <p class="text-sm text-foreground/60 mt-1">
+            <p class="mt-1 text-sm text-foreground/60">
               Awarded the 2022 Cátedra Bosch-UCM in AI applied to IoT
             </p>
           </li>
           <li>
-            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
-              <span class="font-semibold text-base">UNED</span>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+              <span class="text-base font-semibold">UNED</span>
               <span class="text-sm text-foreground/60">In progress</span>
             </div>
-            <p class="text-sm text-foreground/80 mt-1">
+            <p class="mt-1 text-sm text-foreground/80">
               Degree in Geography and History
             </p>
           </li>
           <li>
-            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
-              <span class="font-semibold text-base">Instituto San Isidro de Madrid</span>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+              <span class="text-base font-semibold"
+                >Instituto San Isidro de Madrid</span
+              >
               <span class="text-sm text-foreground/60">2010 – 2016</span>
             </div>
-            <p class="text-sm text-foreground/80 mt-1">ESO y Bachillerato</p>
-            <p class="text-sm text-foreground/60 mt-1">
+            <p class="mt-1 text-sm text-foreground/80">ESO y Bachillerato</p>
+            <p class="mt-1 text-sm text-foreground/60">
               Member of the school board for 6 academic years
             </p>
           </li>
@@ -178,26 +193,31 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
       <!-- Tech Skills -->
       <div class="mb-8">
-        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+        <h3
+          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+        >
           Tech Skills
         </h3>
         <dl class="space-y-2 text-sm">
           <div class="flex flex-wrap gap-x-2">
-            <dt class="font-semibold shrink-0">Experienced:</dt>
-            <dd class="text-foreground/80">Java · Python (Flask, Django) · Docker</dd>
-          </div>
-          <div class="flex flex-wrap gap-x-2">
-            <dt class="font-semibold shrink-0">Familiar:</dt>
+            <dt class="shrink-0 font-semibold">Experienced:</dt>
             <dd class="text-foreground/80">
-              Docker · Apache Kafka · C++ · SQL · Pulumi · Redis · Caddy · Haskell · Go · Solidity · Jenkins 
+              Java · Python (Flask, Django) · Docker
             </dd>
           </div>
           <div class="flex flex-wrap gap-x-2">
-            <dt class="font-semibold shrink-0">Learning:</dt>
+            <dt class="shrink-0 font-semibold">Familiar:</dt>
+            <dd class="text-foreground/80">
+              Docker · Apache Kafka · C++ · SQL · Pulumi · Redis · Caddy ·
+              Haskell · Go · Solidity · Jenkins
+            </dd>
+          </div>
+          <div class="flex flex-wrap gap-x-2">
+            <dt class="shrink-0 font-semibold">Learning:</dt>
             <dd class="text-foreground/80">Kubernetes · APL (BQN) · Rust</dd>
           </div>
           <div class="flex flex-wrap gap-x-2">
-            <dt class="font-semibold shrink-0">Interests:</dt>
+            <dt class="shrink-0 font-semibold">Interests:</dt>
             <dd class="text-foreground/80">
               Drones · Back-end · Big Data · DevOps · Esolangs
             </dd>
@@ -207,7 +227,9 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
       <!-- Languages -->
       <div class="mb-8">
-        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+        <h3
+          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+        >
           Languages
         </h3>
         <dl class="flex flex-wrap gap-x-6 gap-y-1 text-sm">
@@ -228,12 +250,16 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
       <!-- Relevant Experiences -->
       <div>
-        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+        <h3
+          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+        >
           Other
         </h3>
         <ul class="space-y-1 text-sm text-foreground/80">
           <li>
-            Afiliado a JIU (Jóvenes Izquierda Unida) <span class="text-foreground/50">· 2025</span>
+            Afiliado a JIU (Jóvenes Izquierda Unida) <span
+              class="text-foreground/50">· 2025</span
+            >
           </li>
           <li>
             Cooperativista en{" "}
@@ -241,38 +267,46 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
               href="https://laosa.coop/"
               target="_blank"
               class="underline decoration-dashed underline-offset-4 hover:text-accent"
-            >La Osa</a>{" "}
+              >La Osa</a
+            >{" "}
             <span class="text-foreground/50">· 2025</span>
           </li>
           <li>
-            Voluntario de Greenpeace <span class="text-foreground/50">· 2016</span>
+            Voluntario de Greenpeace <span class="text-foreground/50"
+              >· 2016</span
+            >
           </li>
         </ul>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="pt-10 pb-6 border-b border-border">
-      <h2 class="text-2xl font-semibold tracking-wide mb-6">Projects</h2>
+    <section id="projects" class="border-b border-border pt-10 pb-6">
+      <h2 class="mb-6 text-2xl font-semibold tracking-wide">Projects</h2>
       <ul class="space-y-6">
         <li>
           <a
             href="https://3-vaults.com"
             target="_blank"
-            class="font-semibold text-base underline decoration-dashed underline-offset-4 hover:text-accent"
-          >3-vaults.com</a>
-          <p class="text-sm text-foreground/80 mt-1">
-            File storage with three vault types: open (always accessible), timer (unlocks after a set time), and agreement (requires all participants to consent before unlocking).
+            class="text-base font-semibold underline decoration-dashed underline-offset-4 hover:text-accent"
+            >3-vaults.com</a
+          >
+          <p class="mt-1 text-sm text-foreground/80">
+            File storage with three vault types: open (always accessible), timer
+            (unlocks after a set time), and agreement (requires all participants
+            to consent before unlocking).
           </p>
         </li>
 
         <li>
-          <div class="flex flex-wrap justify-between items-baseline gap-x-2">
-            <span class="font-semibold text-base">Hytale Servers</span>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+            <span class="text-base font-semibold">Hytale Servers</span>
             <span class="text-sm text-foreground/60">In progress</span>
           </div>
-          <p class="text-sm text-foreground/80 mt-1">
-            Scalable infrastructure platform to provision and manage game servers on demand — from a single server to a full fleet for network operators running and deploying the servers they need.
+          <p class="mt-1 text-sm text-foreground/80">
+            Scalable infrastructure platform to provision and manage game
+            servers on demand — from a single server to a full fleet for network
+            operators running and deploying the servers they need.
           </p>
         </li>
       </ul>
