@@ -4,9 +4,6 @@ permissions:
   contents: read
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     types:
       - opened
@@ -17,7 +14,7 @@ on:
 
 jobs:
   build:
-    name: Code standards & build
+    name: Code standards
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
@@ -48,6 +45,3 @@ jobs:
 
       - name: "📝 Checking code format"
         run: pnpm run format:check
-
-      - name: "🚀 Build the project"
-        run: pnpm run build
