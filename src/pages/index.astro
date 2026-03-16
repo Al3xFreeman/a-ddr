@@ -73,9 +73,26 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       }
     </section>
 
-    <!-- Resume -->
-    <section id="resume" class="border-b border-border pt-10 pb-6">
-      <h2 class="mb-6 text-2xl font-semibold tracking-wide">Resume</h2>
+    <!-- Resume / Projects tabbed section -->
+    <section id="resume-projects" class="border-b border-border pt-10 pb-6">
+      <div class="mb-6 flex items-baseline gap-3">
+        <h2
+          id="tab-resume"
+          role="tab"
+          aria-selected="true"
+          class="cursor-pointer text-2xl font-semibold tracking-wide transition-opacity"
+        >Resume</h2>
+        <span class="text-2xl font-semibold text-foreground/30 select-none">|</span>
+        <h2
+          id="tab-projects"
+          role="tab"
+          aria-selected="false"
+          class="cursor-pointer text-2xl font-semibold tracking-wide text-foreground/30 transition-opacity hover:text-foreground/60"
+        >Projects</h2>
+      </div>
+
+      <!-- Resume content -->
+      <div id="panel-resume">
 
       <!-- Work Experience -->
       <div class="mb-8">
@@ -278,38 +295,38 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           </li>
         </ul>
       </div>
-    </section>
+      </div>
 
-    <!-- Projects -->
-    <section id="projects" class="border-b border-border pt-10 pb-6">
-      <h2 class="mb-6 text-2xl font-semibold tracking-wide">Projects</h2>
-      <ul class="space-y-6">
-        <li>
-          <a
-            href="https://3-vaults.com"
-            target="_blank"
-            class="text-base font-semibold underline decoration-dashed underline-offset-4 hover:text-accent"
-            >3-vaults.com</a
-          >
-          <p class="mt-1 text-sm text-foreground/80">
-            File storage with three vault types: open (always accessible), timer
-            (unlocks after a set time), and agreement (requires all participants
-            to consent before unlocking).
-          </p>
-        </li>
+      <!-- Projects content -->
+      <div id="panel-projects" class="hidden">
+        <ul class="space-y-6">
+          <li>
+            <a
+              href="https://3-vaults.com"
+              target="_blank"
+              class="text-base font-semibold underline decoration-dashed underline-offset-4 hover:text-accent"
+              >3-vaults.com</a
+            >
+            <p class="mt-1 text-sm text-foreground/80">
+              File storage with three vault types: open (always accessible), timer
+              (unlocks after a set time), and agreement (requires all participants
+              to consent before unlocking).
+            </p>
+          </li>
 
-        <li>
-          <div class="flex flex-wrap items-baseline justify-between gap-x-2">
-            <span class="text-base font-semibold">Game Server Hosting</span>
-            <span class="text-sm text-foreground/60">In progress</span>
-          </div>
-          <p class="mt-1 text-sm text-foreground/80">
-            Scalable infrastructure platform to provision and manage game
-            servers on demand — from a single server to a full fleet for network
-            operators running and deploying the servers they need.
-          </p>
-        </li>
-      </ul>
+          <li>
+            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+              <span class="text-base font-semibold">Game Server Hosting</span>
+              <span class="text-sm text-foreground/60">In progress</span>
+            </div>
+            <p class="mt-1 text-sm text-foreground/80">
+              Scalable infrastructure platform to provision and manage game
+              servers on demand — from a single server to a full fleet for network
+              operators running and deploying the servers they need.
+            </p>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- Blog Posts -->
@@ -363,5 +380,39 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     if (indexLayout) {
       sessionStorage.setItem("backUrl", "/");
     }
+
+    const tabResume = document.getElementById("tab-resume");
+    const tabProjects = document.getElementById("tab-projects");
+    const panelResume = document.getElementById("panel-resume");
+    const panelProjects = document.getElementById("panel-projects");
+
+    if (!tabResume || !tabProjects || !panelResume || !panelProjects) return;
+
+    function activateResume() {
+      panelResume!.classList.remove("hidden");
+      panelProjects!.classList.add("hidden");
+      tabResume!.classList.remove("text-foreground/30");
+      tabResume!.classList.add("text-foreground");
+      tabProjects!.classList.add("text-foreground/30");
+      tabProjects!.classList.remove("text-foreground", "hover:text-foreground/60");
+      tabProjects!.classList.add("hover:text-foreground/60");
+      tabResume!.setAttribute("aria-selected", "true");
+      tabProjects!.setAttribute("aria-selected", "false");
+    }
+
+    function activateProjects() {
+      panelProjects!.classList.remove("hidden");
+      panelResume!.classList.add("hidden");
+      tabProjects!.classList.remove("text-foreground/30", "hover:text-foreground/60");
+      tabProjects!.classList.add("text-foreground");
+      tabResume!.classList.add("text-foreground/30");
+      tabResume!.classList.remove("text-foreground");
+      tabResume!.classList.add("hover:text-foreground/60");
+      tabProjects!.setAttribute("aria-selected", "true");
+      tabResume!.setAttribute("aria-selected", "false");
+    }
+
+    tabResume.addEventListener("click", activateResume);
+    tabProjects.addEventListener("click", activateProjects);
   });
 </script>
