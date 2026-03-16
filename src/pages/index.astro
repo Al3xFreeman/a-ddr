@@ -81,220 +81,245 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           role="tab"
           aria-selected="true"
           class="cursor-pointer text-2xl font-semibold tracking-wide transition-opacity"
-        >Resume</h2>
-        <span class="text-2xl font-semibold text-foreground/30 select-none">|</span>
+        >
+          Resume
+        </h2>
+        <span class="text-2xl font-semibold text-foreground/30 select-none"
+          >|</span
+        >
         <h2
           id="tab-projects"
           role="tab"
           aria-selected="false"
           class="cursor-pointer text-2xl font-semibold tracking-wide text-foreground/30 transition-opacity hover:text-foreground/60"
-        >Projects</h2>
+        >
+          Projects
+        </h2>
       </div>
 
       <!-- Resume content -->
       <div id="panel-resume">
+        <!-- Work Experience -->
+        <div class="mb-8">
+          <h3
+            class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+          >
+            Work Experience
+          </h3>
+          <ul class="space-y-6">
+            <li>
+              <div
+                class="flex flex-wrap items-baseline justify-between gap-x-2"
+              >
+                <span class="text-base font-semibold">GMV</span>
+                <span class="text-sm text-foreground/60"
+                  >Apr 2022 – Jul 2025</span
+                >
+              </div>
+              <p class="mt-1 text-sm text-foreground/80">
+                Full development cycle of EGNOS projects (MSI, EURONOTAM, AUGUR)
+                — from requirements definition with the client to deploying and
+                sourcing hardware for their CPD.
+              </p>
+              <p class="mt-1 text-sm text-foreground/60">
+                Java · C++ · Python · PostgreSQL · MySQL · Jenkins
+              </p>
+            </li>
+            <li>
+              <div
+                class="flex flex-wrap items-baseline justify-between gap-x-2"
+              >
+                <span class="text-base font-semibold">Stratesys</span>
+                <span class="text-sm text-foreground/60"
+                  >Dec 2021 – Apr 2022</span
+                >
+              </div>
+              <p class="mt-1 text-sm text-foreground/80">
+                Backend development in Java (Spring Boot).
+              </p>
+            </li>
+            <li>
+              <div
+                class="flex flex-wrap items-baseline justify-between gap-x-2"
+              >
+                <span class="text-base font-semibold">Elix RegTech</span>
+                <span class="text-sm text-foreground/60"
+                  >Feb 2021 – Jul 2021</span
+                >
+              </div>
+              <p class="mt-1 text-sm text-foreground/80">
+                Backend development in PHP (Laravel).
+              </p>
+            </li>
+            <li>
+              <div
+                class="flex flex-wrap items-baseline justify-between gap-x-2"
+              >
+                <span class="text-base font-semibold"
+                  >Asociación Life Three</span
+                >
+                <span class="text-sm text-foreground/60"
+                  >Oct 2017 – Apr 2019</span
+                >
+              </div>
+              <p class="mt-1 text-sm text-foreground/80">
+                High school teacher for game development.
+              </p>
+            </li>
+          </ul>
+        </div>
 
-      <!-- Work Experience -->
-      <div class="mb-8">
-        <h3
-          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
-        >
-          Work Experience
-        </h3>
-        <ul class="space-y-6">
-          <li>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
-              <span class="text-base font-semibold">GMV</span>
-              <span class="text-sm text-foreground/60">Apr 2022 – Jul 2025</span
+        <!-- Education -->
+        <div class="mb-8">
+          <h3
+            class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+          >
+            Education
+          </h3>
+          <ul class="space-y-6">
+            <li>
+              <div
+                class="flex flex-wrap items-baseline justify-between gap-x-2"
               >
-            </div>
-            <p class="mt-1 text-sm text-foreground/80">
-              Full development cycle of EGNOS projects (MSI, EURONOTAM, AUGUR) —
-              from requirements definition with the client to deploying and
-              sourcing hardware for their CPD.
-            </p>
-            <p class="mt-1 text-sm text-foreground/60">
-              Java · C++ · Python · PostgreSQL · MySQL · Jenkins
-            </p>
-          </li>
-          <li>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
-              <span class="text-base font-semibold">Stratesys</span>
-              <span class="text-sm text-foreground/60">Dec 2021 – Apr 2022</span
+                <span class="text-base font-semibold"
+                  >Universidad Complutense de Madrid</span
+                >
+                <span class="text-sm text-foreground/60">2016 – 2022</span>
+              </div>
+              <p class="mt-1 text-sm text-foreground/80">
+                BSc Software Engineering (Computation itinerary, taught in
+                English)
+              </p>
+              <p class="mt-1 text-sm text-foreground/80">
+                Thesis:{" "}
+                <a
+                  href="https://eprints.ucm.es/id/eprint/74410/"
+                  target="_blank"
+                  class="underline decoration-dashed underline-offset-4 hover:text-accent"
+                >
+                  Simulation of Autonomous Flight of UAVs for Search and Rescue
+                  Missions
+                </a>
+              </p>
+              <p class="mt-1 text-sm text-foreground/60">
+                Awarded the 2022 Cátedra Bosch-UCM in AI applied to IoT
+              </p>
+            </li>
+            <li>
+              <div
+                class="flex flex-wrap items-baseline justify-between gap-x-2"
               >
-            </div>
-            <p class="mt-1 text-sm text-foreground/80">
-              Backend development in Java (Spring Boot).
-            </p>
-          </li>
-          <li>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
-              <span class="text-base font-semibold">Elix RegTech</span>
-              <span class="text-sm text-foreground/60">Feb 2021 – Jul 2021</span
+                <span class="text-base font-semibold">UNED</span>
+                <span class="text-sm text-foreground/60">In progress</span>
+              </div>
+              <p class="mt-1 text-sm text-foreground/80">
+                Degree in Geography and History
+              </p>
+            </li>
+            <li>
+              <div
+                class="flex flex-wrap items-baseline justify-between gap-x-2"
               >
-            </div>
-            <p class="mt-1 text-sm text-foreground/80">
-              Backend development in PHP (Laravel).
-            </p>
-          </li>
-          <li>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
-              <span class="text-base font-semibold">Asociación Life Three</span>
-              <span class="text-sm text-foreground/60">Oct 2017 – Apr 2019</span
-              >
-            </div>
-            <p class="mt-1 text-sm text-foreground/80">
-              High school teacher for game development.
-            </p>
-          </li>
-        </ul>
-      </div>
+                <span class="text-base font-semibold"
+                  >Instituto San Isidro de Madrid</span
+                >
+                <span class="text-sm text-foreground/60">2010 – 2016</span>
+              </div>
+              <p class="mt-1 text-sm text-foreground/80">ESO y Bachillerato</p>
+              <p class="mt-1 text-sm text-foreground/60">
+                Member of the school board for 6 academic years
+              </p>
+            </li>
+          </ul>
+        </div>
 
-      <!-- Education -->
-      <div class="mb-8">
-        <h3
-          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
-        >
-          Education
-        </h3>
-        <ul class="space-y-6">
-          <li>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
-              <span class="text-base font-semibold"
-                >Universidad Complutense de Madrid</span
-              >
-              <span class="text-sm text-foreground/60">2016 – 2022</span>
+        <!-- Tech Skills -->
+        <div class="mb-8">
+          <h3
+            class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+          >
+            Tech Skills
+          </h3>
+          <dl class="space-y-2 text-sm">
+            <div class="flex flex-wrap gap-x-2">
+              <dt class="shrink-0 font-semibold">Experienced:</dt>
+              <dd class="text-foreground/80">
+                Java · Python (Flask, Django) · Docker
+              </dd>
             </div>
-            <p class="mt-1 text-sm text-foreground/80">
-              BSc Software Engineering (Computation itinerary, taught in
-              English)
-            </p>
-            <p class="mt-1 text-sm text-foreground/80">
-              Thesis:{" "}
+            <div class="flex flex-wrap gap-x-2">
+              <dt class="shrink-0 font-semibold">Familiar:</dt>
+              <dd class="text-foreground/80">
+                Docker · Apache Kafka · C++ · SQL · Pulumi · Redis · Caddy ·
+                Haskell · Go · Solidity · Jenkins
+              </dd>
+            </div>
+            <div class="flex flex-wrap gap-x-2">
+              <dt class="shrink-0 font-semibold">Learning:</dt>
+              <dd class="text-foreground/80">Kubernetes · APL (BQN) · Rust</dd>
+            </div>
+            <div class="flex flex-wrap gap-x-2">
+              <dt class="shrink-0 font-semibold">Interests:</dt>
+              <dd class="text-foreground/80">
+                Drones · Back-end · Big Data · DevOps · Esolangs
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Languages -->
+        <div class="mb-8">
+          <h3
+            class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+          >
+            Languages
+          </h3>
+          <dl class="flex flex-wrap gap-x-6 gap-y-1 text-sm">
+            <div class="flex gap-x-2">
+              <dt class="font-semibold">Spanish:</dt>
+              <dd class="text-foreground/80">Native</dd>
+            </div>
+            <div class="flex gap-x-2">
+              <dt class="font-semibold">English:</dt>
+              <dd class="text-foreground/80">Full professional</dd>
+            </div>
+            <div class="flex gap-x-2">
+              <dt class="font-semibold">German:</dt>
+              <dd class="text-foreground/80">Limited working</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Relevant Experiences -->
+        <div>
+          <h3
+            class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
+          >
+            Other
+          </h3>
+          <ul class="space-y-1 text-sm text-foreground/80">
+            <li>
+              Afiliado a JIU (Jóvenes Izquierda Unida) <span
+                class="text-foreground/50">· 2025</span
+              >
+            </li>
+            <li>
+              Cooperativista en{" "}
               <a
-                href="https://eprints.ucm.es/id/eprint/74410/"
+                href="https://laosa.coop/"
                 target="_blank"
                 class="underline decoration-dashed underline-offset-4 hover:text-accent"
+                >La Osa</a
+              >{" "}
+              <span class="text-foreground/50">· 2025</span>
+            </li>
+            <li>
+              Voluntario de Greenpeace <span class="text-foreground/50"
+                >· 2016</span
               >
-                Simulation of Autonomous Flight of UAVs for Search and Rescue
-                Missions
-              </a>
-            </p>
-            <p class="mt-1 text-sm text-foreground/60">
-              Awarded the 2022 Cátedra Bosch-UCM in AI applied to IoT
-            </p>
-          </li>
-          <li>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
-              <span class="text-base font-semibold">UNED</span>
-              <span class="text-sm text-foreground/60">In progress</span>
-            </div>
-            <p class="mt-1 text-sm text-foreground/80">
-              Degree in Geography and History
-            </p>
-          </li>
-          <li>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
-              <span class="text-base font-semibold"
-                >Instituto San Isidro de Madrid</span
-              >
-              <span class="text-sm text-foreground/60">2010 – 2016</span>
-            </div>
-            <p class="mt-1 text-sm text-foreground/80">ESO y Bachillerato</p>
-            <p class="mt-1 text-sm text-foreground/60">
-              Member of the school board for 6 academic years
-            </p>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Tech Skills -->
-      <div class="mb-8">
-        <h3
-          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
-        >
-          Tech Skills
-        </h3>
-        <dl class="space-y-2 text-sm">
-          <div class="flex flex-wrap gap-x-2">
-            <dt class="shrink-0 font-semibold">Experienced:</dt>
-            <dd class="text-foreground/80">
-              Java · Python (Flask, Django) · Docker
-            </dd>
-          </div>
-          <div class="flex flex-wrap gap-x-2">
-            <dt class="shrink-0 font-semibold">Familiar:</dt>
-            <dd class="text-foreground/80">
-              Docker · Apache Kafka · C++ · SQL · Pulumi · Redis · Caddy ·
-              Haskell · Go · Solidity · Jenkins
-            </dd>
-          </div>
-          <div class="flex flex-wrap gap-x-2">
-            <dt class="shrink-0 font-semibold">Learning:</dt>
-            <dd class="text-foreground/80">Kubernetes · APL (BQN) · Rust</dd>
-          </div>
-          <div class="flex flex-wrap gap-x-2">
-            <dt class="shrink-0 font-semibold">Interests:</dt>
-            <dd class="text-foreground/80">
-              Drones · Back-end · Big Data · DevOps · Esolangs
-            </dd>
-          </div>
-        </dl>
-      </div>
-
-      <!-- Languages -->
-      <div class="mb-8">
-        <h3
-          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
-        >
-          Languages
-        </h3>
-        <dl class="flex flex-wrap gap-x-6 gap-y-1 text-sm">
-          <div class="flex gap-x-2">
-            <dt class="font-semibold">Spanish:</dt>
-            <dd class="text-foreground/80">Native</dd>
-          </div>
-          <div class="flex gap-x-2">
-            <dt class="font-semibold">English:</dt>
-            <dd class="text-foreground/80">Full professional</dd>
-          </div>
-          <div class="flex gap-x-2">
-            <dt class="font-semibold">German:</dt>
-            <dd class="text-foreground/80">Limited working</dd>
-          </div>
-        </dl>
-      </div>
-
-      <!-- Relevant Experiences -->
-      <div>
-        <h3
-          class="mb-4 text-lg font-semibold tracking-widest text-accent uppercase"
-        >
-          Other
-        </h3>
-        <ul class="space-y-1 text-sm text-foreground/80">
-          <li>
-            Afiliado a JIU (Jóvenes Izquierda Unida) <span
-              class="text-foreground/50">· 2025</span
-            >
-          </li>
-          <li>
-            Cooperativista en{" "}
-            <a
-              href="https://laosa.coop/"
-              target="_blank"
-              class="underline decoration-dashed underline-offset-4 hover:text-accent"
-              >La Osa</a
-            >{" "}
-            <span class="text-foreground/50">· 2025</span>
-          </li>
-          <li>
-            Voluntario de Greenpeace <span class="text-foreground/50"
-              >· 2016</span
-            >
-          </li>
-        </ul>
-      </div>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Projects content -->
@@ -308,9 +333,9 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
               >3-vaults.com</a
             >
             <p class="mt-1 text-sm text-foreground/80">
-              File storage with three vault types: open (always accessible), timer
-              (unlocks after a set time), and agreement (requires all participants
-              to consent before unlocking).
+              File storage with three vault types: open (always accessible),
+              timer (unlocks after a set time), and agreement (requires all
+              participants to consent before unlocking).
             </p>
           </li>
 
@@ -321,8 +346,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
             </div>
             <p class="mt-1 text-sm text-foreground/80">
               Scalable infrastructure platform to provision and manage game
-              servers on demand — from a single server to a full fleet for network
-              operators running and deploying the servers they need.
+              servers on demand — from a single server to a full fleet for
+              network operators running and deploying the servers they need.
             </p>
           </li>
         </ul>
@@ -394,7 +419,10 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       tabResume!.classList.remove("text-foreground/30");
       tabResume!.classList.add("text-foreground");
       tabProjects!.classList.add("text-foreground/30");
-      tabProjects!.classList.remove("text-foreground", "hover:text-foreground/60");
+      tabProjects!.classList.remove(
+        "text-foreground",
+        "hover:text-foreground/60"
+      );
       tabProjects!.classList.add("hover:text-foreground/60");
       tabResume!.setAttribute("aria-selected", "true");
       tabProjects!.setAttribute("aria-selected", "false");
@@ -403,7 +431,10 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     function activateProjects() {
       panelProjects!.classList.remove("hidden");
       panelResume!.classList.add("hidden");
-      tabProjects!.classList.remove("text-foreground/30", "hover:text-foreground/60");
+      tabProjects!.classList.remove(
+        "text-foreground/30",
+        "hover:text-foreground/60"
+      );
       tabProjects!.classList.add("text-foreground");
       tabResume!.classList.add("text-foreground/30");
       tabResume!.classList.remove("text-foreground");
