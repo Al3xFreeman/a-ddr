@@ -1,0 +1,333 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Socials from "@/components/Socials.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import Card from "@/components/Card.astro";
+import getSortedPosts from "@/utils/getSortedPosts";
+import IconRss from "@/assets/icons/IconRss.svg";
+import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import { SITE } from "@/config";
+import { SOCIALS } from "@/constants";
+
+const posts = await getCollection("blog");
+
+const sortedPosts = getSortedPosts(posts);
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+---
+
+<Layout>
+  <Header />
+  <main id="main-content" data-layout="index" class="app-layout">
+
+    <!-- Hero / Intro -->
+    <section id="hero" class="pt-8 pb-6 border-b border-border">
+      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
+        Hi, I'm Alex
+      </h1>
+      <a
+        target="_blank"
+        href="/rss.xml"
+        class="inline-block ml-2"
+        aria-label="rss feed"
+        title="RSS Feed"
+      >
+        <IconRss
+          width={20}
+          height={20}
+          class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
+        />
+        <span class="sr-only">RSS Feed</span>
+      </a>
+
+      <p class="mt-2 text-lg">
+        I'm Alex, 27, from Spain. I have a degree in Computer Science{" "}
+        <a
+          href="https://informatica.ucm.es/"
+          target="_blank"
+          class="underline decoration-dashed underline-offset-4 hover:text-accent"
+        >@UCM</a>{" "}
+        and studying Geography and History{" "}
+        <a
+          href="https://www.uned.es/"
+          target="_blank"
+          class="underline decoration-dashed underline-offset-4 hover:text-accent"
+        >@UNED</a>.
+      </p>
+      <p class="mt-2 text-base text-foreground/80">
+        Mainly interested in backend development, AI applications (computer vision &
+        deep neural networks), and autonomous drone flight.
+      </p>
+
+      {
+        SOCIALS.length > 0 && (
+          <div class="mt-4 flex max-sm:flex-col sm:items-center">
+            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Find me at:</div>
+            <Socials />
+          </div>
+        )
+      }
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="pt-10 pb-6 border-b border-border">
+      <h2 class="text-2xl font-semibold tracking-wide mb-6">Resume</h2>
+
+      <!-- Work Experience -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+          Work Experience
+        </h3>
+        <ul class="space-y-6">
+          <li>
+            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
+              <span class="font-semibold text-base">GMV</span>
+              <span class="text-sm text-foreground/60">Apr 2022 – Jul 2025</span>
+            </div>
+            <p class="text-sm text-foreground/80 mt-1">
+              Full development cycle of EGNOS projects (MSI, EURONOTAM, AUGUR) — from
+              requirements definition with the client to deploying and sourcing hardware
+              for their CPD.
+            </p>
+            <p class="text-sm text-foreground/60 mt-1">
+              Java · C++ · Python · PostgreSQL · MySQL · Jenkins
+            </p>
+          </li>
+          <li>
+            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
+              <span class="font-semibold text-base">Stratesys</span>
+              <span class="text-sm text-foreground/60">Dec 2021 – Apr 2022</span>
+            </div>
+            <p class="text-sm text-foreground/80 mt-1">
+              Backend development in Java (Spring Boot).
+            </p>
+          </li>
+          <li>
+            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
+              <span class="font-semibold text-base">Elix RegTech</span>
+              <span class="text-sm text-foreground/60">Feb 2021 – Jul 2021</span>
+            </div>
+            <p class="text-sm text-foreground/80 mt-1">
+              Backend development in PHP (Laravel).
+            </p>
+          </li>
+          <li>
+            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
+              <span class="font-semibold text-base">Asociación Life Three</span>
+              <span class="text-sm text-foreground/60">Oct 2017 – Apr 2019</span>
+            </div>
+            <p class="text-sm text-foreground/80 mt-1">
+              High school teacher for game development.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Education -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+          Education
+        </h3>
+        <ul class="space-y-6">
+          <li>
+            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
+              <span class="font-semibold text-base">Universidad Complutense de Madrid</span>
+              <span class="text-sm text-foreground/60">2016 – 2022</span>
+            </div>
+            <p class="text-sm text-foreground/80 mt-1">
+              BSc Software Engineering (Computation itinerary, taught in English)
+            </p>
+            <p class="text-sm text-foreground/80 mt-1">
+              Thesis:{" "}
+              <a
+                href="https://eprints.ucm.es/id/eprint/74410/"
+                target="_blank"
+                class="underline decoration-dashed underline-offset-4 hover:text-accent"
+              >
+                Simulation of Autonomous Flight of UAVs for Search and Rescue Missions
+              </a>
+            </p>
+            <p class="text-sm text-foreground/60 mt-1">
+              Awarded the 2022 Cátedra Bosch-UCM in AI applied to IoT
+            </p>
+          </li>
+          <li>
+            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
+              <span class="font-semibold text-base">UNED</span>
+              <span class="text-sm text-foreground/60">In progress</span>
+            </div>
+            <p class="text-sm text-foreground/80 mt-1">
+              Degree in Geography and History
+            </p>
+          </li>
+          <li>
+            <div class="flex flex-wrap justify-between items-baseline gap-x-2">
+              <span class="font-semibold text-base">Instituto San Isidro de Madrid</span>
+              <span class="text-sm text-foreground/60">2010 – 2016</span>
+            </div>
+            <p class="text-sm text-foreground/80 mt-1">ESO y Bachillerato</p>
+            <p class="text-sm text-foreground/60 mt-1">
+              Member of the school board for 6 academic years
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tech Skills -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+          Tech Skills
+        </h3>
+        <dl class="space-y-2 text-sm">
+          <div class="flex flex-wrap gap-x-2">
+            <dt class="font-semibold shrink-0">Experienced:</dt>
+            <dd class="text-foreground/80">Java · Python (Flask, Django) · Docker</dd>
+          </div>
+          <div class="flex flex-wrap gap-x-2">
+            <dt class="font-semibold shrink-0">Familiar:</dt>
+            <dd class="text-foreground/80">
+              Docker · Apache Kafka · C++ · SQL · Pulumi · Redis · Caddy · Haskell · Go · Solidity · Jenkins 
+            </dd>
+          </div>
+          <div class="flex flex-wrap gap-x-2">
+            <dt class="font-semibold shrink-0">Learning:</dt>
+            <dd class="text-foreground/80">Kubernetes · APL (BQN) · Rust</dd>
+          </div>
+          <div class="flex flex-wrap gap-x-2">
+            <dt class="font-semibold shrink-0">Interests:</dt>
+            <dd class="text-foreground/80">
+              Drones · Back-end · Big Data · DevOps · Esolangs
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Languages -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+          Languages
+        </h3>
+        <dl class="flex flex-wrap gap-x-6 gap-y-1 text-sm">
+          <div class="flex gap-x-2">
+            <dt class="font-semibold">Spanish:</dt>
+            <dd class="text-foreground/80">Native</dd>
+          </div>
+          <div class="flex gap-x-2">
+            <dt class="font-semibold">English:</dt>
+            <dd class="text-foreground/80">Full professional</dd>
+          </div>
+          <div class="flex gap-x-2">
+            <dt class="font-semibold">German:</dt>
+            <dd class="text-foreground/80">Limited working</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Relevant Experiences -->
+      <div>
+        <h3 class="text-lg font-semibold uppercase tracking-widest text-accent mb-4">
+          Other
+        </h3>
+        <ul class="space-y-1 text-sm text-foreground/80">
+          <li>
+            Afiliado a JIU (Jóvenes Izquierda Unida) <span class="text-foreground/50">· 2025</span>
+          </li>
+          <li>
+            Cooperativista en{" "}
+            <a
+              href="https://laosa.coop/"
+              target="_blank"
+              class="underline decoration-dashed underline-offset-4 hover:text-accent"
+            >La Osa</a>{" "}
+            <span class="text-foreground/50">· 2025</span>
+          </li>
+          <li>
+            Voluntario de Greenpeace <span class="text-foreground/50">· 2016</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="pt-10 pb-6 border-b border-border">
+      <h2 class="text-2xl font-semibold tracking-wide mb-6">Projects</h2>
+      <ul class="space-y-6">
+        <li>
+          <a
+            href="https://3-vaults.com"
+            target="_blank"
+            class="font-semibold text-base underline decoration-dashed underline-offset-4 hover:text-accent"
+          >3-vaults.com</a>
+          <p class="text-sm text-foreground/80 mt-1">
+            File storage with three vault types: open (always accessible), timer (unlocks after a set time), and agreement (requires all participants to consent before unlocking).
+          </p>
+        </li>
+
+        <li>
+          <div class="flex flex-wrap justify-between items-baseline gap-x-2">
+            <span class="font-semibold text-base">Hytale Servers</span>
+            <span class="text-sm text-foreground/60">In progress</span>
+          </div>
+          <p class="text-sm text-foreground/80 mt-1">
+            Scalable infrastructure platform to provision and manage game servers on demand — from a single server to a full fleet for network operators running and deploying the servers they need.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Blog Posts -->
+    {
+      featuredPosts.length > 0 && (
+        <section
+          id="featured"
+          class:list={[
+            "pt-12 pb-6",
+            { "border-b border-border": recentPosts.length > 0 },
+          ]}
+        >
+          <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
+          <ul>
+            {featuredPosts.map(data => (
+              <Card variant="h3" {...data} />
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      recentPosts.length > 0 && (
+        <section id="recent-posts" class="pt-12 pb-6">
+          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
+          <ul>
+            {recentPosts.map(
+              (data, index) =>
+                index < SITE.postPerIndex && <Card variant="h3" {...data} />
+            )}
+          </ul>
+        </section>
+      )
+    }
+
+    <div class="my-8 text-center">
+      <LinkButton href="/posts/">
+        All Posts
+        <IconArrowRight class="inline-block rtl:-rotate-180" />
+      </LinkButton>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
+      ?.dataset?.layout;
+    if (indexLayout) {
+      sessionStorage.setItem("backUrl", "/");
+    }
+  });
+</script>
