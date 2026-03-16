@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://a-ddr.me",
   desc: "My personal blog :)",
   title: "alex",
-  //ogImage: "astropaper-og.jpg",
+  ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
